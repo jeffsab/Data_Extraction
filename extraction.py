@@ -1,29 +1,17 @@
-
-import os
-from scapy.all import *
-
-
-from getHTTPHeaders import HTTPHeaders, extractText
-data = "google_check.pcapng"
-a = rdpcap(data)
+#jeffrey Sabri 2018 Aug
+from scapy_ssl_tls.ssl_tls import *
+from scapy.layers import *
 
 
-sessions = a.sessions()
-carved_texts = 1
-for session in sessions:
-    http_payload = ""
-    for packet in sessions[session]:
-        try:
-            if packet[TCP].dport == 80 or packet[TCP].sport == 80:
-                http_payload += str(packet[TCP].payload)
-        except:
-            pass
-        headers = HTTPHeaders(http_payload)
-    if headers is None:
-        continue
-    text = extractText(headers,http_payload)
-    if text is not None:
-         print (text)
+def getcts(pkts):
+    a = []
+    for pkt in pkts:
+        if pkt.haslayer(SSL):
+            a.append(pkt)
+    return a
 
 
+if __name__ =="__main__":
+    pkts = rdpcap('google_check.pcapng')
+    data=getcts(pkts)
 
