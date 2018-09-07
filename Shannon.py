@@ -77,24 +77,26 @@ for packet in data:
      except KeyError:
             continue
 
-g_data=[]
+g_data=""
+x=0
 for elem in tcp_data_ex:
-    g_data.append(elem)
+    if x==1:
+        g_data= g_data + (":").encode('latin-1')+elem.encode('latin-1')
+    else:
+        x=1
+        g_data=elem.encode('latin-1')
 
-
-g_data=tcp_data_ex
 print("this is the data")
 # tcp_data_ex=tcp_data_ex.encode('latin-1')
-
+print(g_data)
 print(tcp_data_ex)
-tcp_data_ex=tcp_data_ex[0]
-val_prior_convert= shannon(tcp_data_ex)
-tcp_data_ex2=tcp_data_ex.encode('latin-1')
+val_prior_convert= shannon(tcp_data_ex[2])
+tcp_data_ex2 = tcp_data_ex
 
-print(tcp_data_ex)
+print(len(g_data))
 value= shannon(tcp_data_ex2)
 value2= entropy_ideal(len(tcp_data_ex2))
-value3=kolmogorov(tcp_data_ex2)
+value3=kolmogorov(g_data)
 print (value)
 print (value2)
 print (value3)
