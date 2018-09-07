@@ -102,3 +102,16 @@ print (value2)
 print (value3)
 
 print("this is prior to conversion", val_prior_convert)
+
+print("this is test of part 2")
+file = open("pi","rb")
+stringer=b''
+edsx try:
+    byte =f.read(1)
+    while byte != "":
+        stringer=stringer+byte
+        print(stringer)
+        byte=f.read(1)
+finally:
+    print (stringer)
+    f.close()
