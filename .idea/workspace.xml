@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Shannon.py" line="145" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/Shannon.py" line="150" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8da080db-88a3-477e-8fcc-37b7b103f92f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Data_Extraction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Data_Extraction.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shannon.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shannon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/extraction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/from_uni.py" beforeDir="false" afterPath="$PROJECT_DIR$/from_uni.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -17,40 +19,41 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Data_Extraction$extraction.coverage" NAME="extraction Coverage Results" MODIFIED="1536111113854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Data_Extraction$Shannon.coverage" NAME="Shannon Coverage Results" MODIFIED="1537242944473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Data_Extraction$from_uni.coverage" NAME="from_uni Coverage Results" MODIFIED="1537242622795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Data_Extraction$Shannon__copy_.coverage" NAME="Shannon (copy) Coverage Results" MODIFIED="1537268193082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Data_Extraction$extraction.coverage" NAME="extraction Coverage Results" MODIFIED="1537263659870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Data_Extraction$Shannon.coverage" NAME="Shannon Coverage Results" MODIFIED="1537267385552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Data_Extraction$from_uni.coverage" NAME="from_uni Coverage Results" MODIFIED="1537266289885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-103972314">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="3" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.open.time.6" value="5" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="3" />
+          <entry key="py" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="3" />
+          <entry key="Python" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="141" />
-          <entry key="py" value="2364" />
+          <entry key="py" value="3011" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2505" />
+          <entry key="Python" value="3152" />
         </counts>
       </usages-collector>
     </session>
@@ -60,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extraction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="609">
+              <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
               <folding>
                 <element signature="e#24#59#0" expanded="true" />
               </folding>
@@ -70,10 +73,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Shannon.py">
+        <entry file="file://$PROJECT_DIR$/Shannon (copy).py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="863">
-              <caret line="124" column="26" lean-forward="true" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
+            <state relative-caret-position="957">
+              <caret line="138" column="16" selection-start-line="138" selection-start-column="16" selection-end-line="138" selection-end-column="16" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -84,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/from_uni.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+            <state relative-caret-position="952">
+              <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -111,6 +114,7 @@
         <option value="$PROJECT_DIR$/extraction.py" />
         <option value="$PROJECT_DIR$/from_uni.py" />
         <option value="$PROJECT_DIR$/Shannon.py" />
+        <option value="$PROJECT_DIR$/Shannon (copy).py" />
       </list>
     </option>
   </component>
@@ -162,7 +166,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Shannon">
+  <component name="RunManager" selected="Python.Shannon (copy)">
+    <configuration name="Shannon (copy)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Data_Extraction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Shannon (copy).py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Shannon" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Data_Extraction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -233,9 +259,11 @@
       <item itemvalue="Python.Shannon" />
       <item itemvalue="Python.extraction" />
       <item itemvalue="Python.from_uni" />
+      <item itemvalue="Python.Shannon (copy)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Shannon (copy)" />
         <item itemvalue="Python.Shannon" />
         <item itemvalue="Python.from_uni" />
         <item itemvalue="Python.extraction" />
@@ -263,8 +291,8 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49775785" visible="true" weight="0.26174682" />
-      <window_info id="Structure" order="2" sideWeight="0.50224215" side_tool="true" visible="true" weight="0.26174682" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49638554" visible="true" weight="0.26782754" />
+      <window_info id="Structure" order="2" sideWeight="0.5036145" side_tool="true" weight="0.26782754" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32956383" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5002764" side_tool="true" weight="0.32956383" />
@@ -274,7 +302,7 @@
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
       <window_info anchor="bottom" id="Run" order="8" sideWeight="0.4997236" weight="0.32956383" />
-      <window_info active="true" anchor="bottom" id="Debug" order="9" visible="true" weight="0.39956918" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.39956918" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" />
@@ -284,6 +312,29 @@
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49638554" weight="0.26782754" />
+      <window_info id="Structure" order="2" sideWeight="0.5036145" side_tool="true" weight="0.26782754" />
+      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.32956383" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5002764" side_tool="true" weight="0.32956383" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Python Console" order="4" weight="0.32956383" />
+      <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.4997236" visible="true" weight="0.32956383" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.39956918" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="SciView" order="2" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -296,28 +347,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Shannon.py</url>
-          <line>131</line>
+          <line>136</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Shannon.py</url>
-          <line>141</line>
+          <line>146</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Shannon.py</url>
-          <line>103</line>
+          <line>105</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Shannon.py</url>
-          <line>119</line>
+          <line>120</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Shannon.py</url>
-          <line>106</line>
+          <line>107</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/from_uni.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -325,8 +381,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/extraction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="609">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
           <folding>
             <element signature="e#24#59#0" expanded="true" />
           </folding>
@@ -335,8 +391,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/from_uni.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        <state relative-caret-position="952">
+          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -345,8 +401,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Shannon.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="863">
-          <caret line="124" column="26" lean-forward="true" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
+        <state relative-caret-position="841">
+          <caret line="125" column="32" lean-forward="true" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Shannon (copy).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="957">
+          <caret line="138" column="16" selection-start-line="138" selection-start-column="16" selection-end-line="138" selection-end-column="16" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

@@ -9,7 +9,7 @@ def getcts(pkts):
     a = []
     for pkt in pkts:
         if pkt.haslayer(SSL):
-            a.append(pkt)
+            a.append(pkt.haslayer(SSL.app_data))
     return a
 
 #vpereira/flows_entropy
@@ -61,6 +61,7 @@ def kolmogorov(data):
         return c
 
 if __name__ =="__main__":
-    pkts = rdpcap('google_check.pcapng')
+    pkts = rdpcap('google_check.pcap')
     data=getcts(pkts)
+    print (data)
 

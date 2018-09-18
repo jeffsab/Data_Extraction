@@ -4,7 +4,6 @@ from math import log
 import unicodedata
 import binascii
 
-
 def entropy(string):
         "Calculates the Shannon entropy of a string"
 
@@ -94,6 +93,9 @@ total_flows= len(data)
 tcp_data_ex=[]
 
     # print(data['layers']['frame']['tcp.payload'])
+
+
+
 for packet in data:
      try:
              # print(packet[u'_source'][u'layers'][u'tcp'][u'tcp.payload'])
@@ -103,28 +105,31 @@ for packet in data:
 
 x=0
 for elem in tcp_data_ex:
-    abcd=elem.decode("utf-8","strict")
     if x==1:
-        # g_data= g_data + (":").encode('latin-1')+elem.encode('latin-1')
-        g_data= g_data +abcd.encode('utf-8')
+        g_data= g_data + (":").encode('latin-1')+elem.encode('latin-1')
+        # print(elem.encode('latin1'))
+        # g_data= g_data + elem.decode('utf-8').encode('latin1')
+
         # g_data.extend(elem)
     else:
         x=1
-        g_data=b''
+        g_data= elem.encode('latin-1')
         # g_data=bytearray()
-        print (type(g_data))
-
-
+        print (type(g_data),"this is it")
 
 
 print("this is the data")
 print(type(g_data))
 # tcp_data_ex=tcp_data_ex.encode('latin-1')
-print("correct data",g_data.encode('utf-8'))
+print("correct data",g_data)
+print(tcp_data_ex[0])
 val_prior_convert= shannon(tcp_data_ex[2])
 tcp_data_ex2 = tcp_data_ex
 
 print(len(g_data))
+
+the_correct=binascii.unhexlify(g_data)
+
 value= shannon(g_data)
 value2= entropy_ideal(len(g_data))
 value3=kolmogorov(g_data)

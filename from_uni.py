@@ -1,6 +1,8 @@
 import json
 from pprint import pprint
 import binascii
+import bitarray
+
 """
 shit=[]
 with open('tester') as f:
@@ -31,3 +33,16 @@ plainstring4 = unicode(utf16string, "utf-16")
 assert plainstring1 == plainstring2 == plainstring3 == plainstring4
 
 print (utf8string,asciistring,isostring,utf16string,plainstring1,plainstring2,plainstring3,plainstring4)
+
+st = "hello world"
+abc=''
+print(abc.join(format(ord(x), 'b') for x in st))
+
+item = u'usomestring'
+decoded_value = item.decode('utf-8')
+# decoded_value=decoded_value.decode('utf-8')
+print(decoded_value)
+decoded_value=decoded_value.encode('utf-8')
+print(decoded_value,"fasdsa")
+b = bitarray.bitarray()
+b.fromstring(decoded_value)
