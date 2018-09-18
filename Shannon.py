@@ -2,6 +2,28 @@ import json
 import zlib
 from math import log
 import unicodedata
+import binascii
+
+
+def entropy(string):
+        "Calculates the Shannon entropy of a string"
+
+        # get probability of chars in string
+        prob = [ float(string.count(c)) / len(string) for c in dict.fromkeys(list(string)) ]
+
+        # calculate the entropy
+        entropy = - sum([ p * math.log(p) / math.log(2.0) for p in prob ])
+
+        return entropy
+
+
+def entropy_ideal(length):
+        "Calculates the ideal Shannon entropy of a string with given length"
+
+        prob = 1.0 / length
+
+        return -1.0 * length * prob * math.log(prob) / math.log(2.0)
+
 
 def byte_entropy(flow):
     if flow.has_key("be"):
@@ -60,6 +82,8 @@ def kolmogorov(data):
     else:
         return c
 
+
+
 flow=[]
 byte_entropy_per_flow = []
 with open('tester2') as f:
@@ -77,25 +101,32 @@ for packet in data:
      except KeyError:
             continue
 
-g_data=""
 x=0
 for elem in tcp_data_ex:
+    abcd=elem.decode("utf-8","strict")
     if x==1:
-        g_data= g_data + (":").encode('latin-1')+elem.encode('latin-1')
+        # g_data= g_data + (":").encode('latin-1')+elem.encode('latin-1')
+        g_data= g_data +abcd.encode('utf-8')
+        # g_data.extend(elem)
     else:
         x=1
-        g_data=elem.encode('latin-1')
+        g_data=b''
+        # g_data=bytearray()
+        print (type(g_data))
+
+
+
 
 print("this is the data")
+print(type(g_data))
 # tcp_data_ex=tcp_data_ex.encode('latin-1')
-print(g_data)
-print(tcp_data_ex)
+print("correct data",g_data.encode('utf-8'))
 val_prior_convert= shannon(tcp_data_ex[2])
 tcp_data_ex2 = tcp_data_ex
 
 print(len(g_data))
-value= shannon(tcp_data_ex2)
-value2= entropy_ideal(len(tcp_data_ex2))
+value= shannon(g_data)
+value2= entropy_ideal(len(g_data))
 value3=kolmogorov(g_data)
 print (value)
 print (value2)
@@ -106,7 +137,9 @@ print("this is prior to conversion", val_prior_convert)
 print("this is test of part 2")
 file = open("pi","rb")
 stringer=b''
-edsx try:
+
+"""
+try:
     byte =f.read(1)
     while byte != "":
         stringer=stringer+byte
@@ -115,3 +148,5 @@ edsx try:
 finally:
     print (stringer)
     f.close()
+
+"""
