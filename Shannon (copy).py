@@ -1,8 +1,7 @@
 import json
 import zlib
 from math import log
-import unicodedata
-import binascii
+import math
 
 
 hex2bin_map = {
@@ -35,7 +34,7 @@ def entropy(string):
         return entropy
 
 
-def entropy_ideal(length):
+def entropy_ideal2(length):
         "Calculates the ideal Shannon entropy of a string with given length"
 
         prob = 1.0 / length
@@ -136,37 +135,38 @@ for elem in tcp_data_ex:
         # g_data=bytearray()
         print (type(g_data),"this is it")
 
-print(len(g_data))
+
+
 newstr = g_data.replace(":", "")
-g_data=bin(int(newstr, 16))
-print (newstr.decode())
+# newstr=g.data(replace("0b"))
 print(len(newstr))
-print("this is the data")
-print(type(g_data))
-# tcp_data_ex=tcp_data_ex.encode('latin-1')
-print("correct data",g_data)
-print(tcp_data_ex[0])
-val_prior_convert= shannon(tcp_data_ex[2])
-tcp_data_ex2 = tcp_data_ex
+print(newstr)
+# newstr=("16030100")
+bin_data=(bin(int(newstr, 16))[2:]).zfill(len(newstr*4))
 
-print(len(g_data))
 
-the_correct=binascii.unhexlify(g_data)
 
-value= shannon(g_data)
-value2= entropy_ideal(len(g_data))
-value3=kolmogorov(g_data)
+print("length of binary data", len(bin_data))
+
+print("correct data",bin_data)
+
+
+
+value= shannon(bin_data)
+value2= entropy_ideal(len(bin_data))
+value3=kolmogorov(bin_data)
 print (value)
+print("second value of shannon", entropy(bin_data))
 print (value2)
 print (value3)
 
-print("this is prior to conversion", val_prior_convert)
-
+print("this is prior to conversion", newstr)
+""""#
 print("this is test of part 2")
 file = open("pi","rb")
 stringer=b''
 
-"""
+
 try:
     byte =f.read(1)
     while byte != "":
