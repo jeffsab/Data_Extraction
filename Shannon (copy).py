@@ -153,7 +153,7 @@ print("length of binary data", len(bin_data))
 
 value= shannon(bin_data)
 value2= entropy_ideal(len(bin_data))
-value3=kolmogorov(bin_data)
+value3=kolmogorov(bin_data) 
 print (value)
 print("second value of shannon", entropy(bin_data))
 print ("ideal shannon entropy",value2)
