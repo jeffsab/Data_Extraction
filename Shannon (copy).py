@@ -103,7 +103,7 @@ def kolmogorov(data):
 
 flow=[]
 byte_entropy_per_flow = []
-with open('tester2') as f:
+with open('json') as f:
     data = json.load(f);
 
 total_flows= len(data)
@@ -135,12 +135,11 @@ for elem in tcp_data_ex:
         # g_data=bytearray()
         print (type(g_data),"this is it")
 
-
-
+f.close()
 newstr = g_data.replace(":", "")
 # newstr=g.data(replace("0b"))
 print(len(newstr))
-print(newstr)
+# print(newst(r)
 # newstr=("16030100")
 bin_data=(bin(int(newstr, 16))[2:]).zfill(len(newstr*4))
 
@@ -148,7 +147,7 @@ bin_data=(bin(int(newstr, 16))[2:]).zfill(len(newstr*4))
 
 print("length of binary data", len(bin_data))
 
-print("correct data",bin_data)
+# print("correct data",bin_data)
 
 
 
@@ -157,10 +156,10 @@ value2= entropy_ideal(len(bin_data))
 value3=kolmogorov(bin_data)
 print (value)
 print("second value of shannon", entropy(bin_data))
-print (value2)
-print (value3)
+print ("ideal shannon entropy",value2)
+print ("kolmogorov entropy calculation", value3)
 
-print("this is prior to conversion", newstr)
+# print("this is prior to conversion", newstr)
 """"#
 print("this is test of part 2")
 file = open("pi","rb")
