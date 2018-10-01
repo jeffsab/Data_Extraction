@@ -38,7 +38,7 @@ def shannon (data):
     dataSize = len(data)
     ent = 0.0
     freq={}
-    for c in data:
+    for c in data[0:2]:
         if freq.has_key(c):
             freq[c] += 1
         else:
@@ -85,19 +85,39 @@ with open('json') as f:
 total_flows= len(data)
 # pprint(data)
 tcp_data_ex=[]
-
     # print(data['layers']['frame']['tcp.payload'])
+tcp_data_ex2=[]
 
 
 
 for packet in data:
      try:
-             # print(packet[u'_source'][u'layers'][u'tcp'][u'tcp.payload'])
-             tcp_data_ex.append(packet[u'_source'][u'layers'][u'tcp'][u'tcp.payload'])
+
+             print(packet[u'_source'][u'layers'][u'frame'][u'frame.number'][0:])
+             print(type(packet[u'_source'][u'layers'][u'tcp'][u'tcp.payload']))
+             # print((packet[u'_source'][u'layers'][u'ssl'][u'ssl.record']))
+
+             # tcp_data_ex.append(packet[u'_source'][u'layers'][u'tcp'][u'tcp.payload'])
+
+             print(packet[u'_source'][u'layers'][u'tcp'][u'tcp.payload'])
+             # print(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'])
+
+             if(len(packet[u'_source'][u'layers'][u'ssl'])>= 240):
+                print(len(packet[u'_source'][u'layers'][u'ssl']))
+                print(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'])
+                print(type(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data']))
+                tcp_data_ex.append(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'])
+
+
      except KeyError:
             continue
 
+
+# print ("abcdsadsa", tcp_data_ex )
+# print (len(tcp_data_ex))
 x=0
+
+"""
 for elem in tcp_data_ex:
     if x==1:
         g_data= g_data + (":").encode('latin-1')+elem.encode('latin-1')
@@ -110,10 +130,12 @@ for elem in tcp_data_ex:
         g_data= elem.encode('latin-1')
         # g_data=bytearray()
         print (type(g_data),"this is it")
+        print(elem  )
 
 f.close()
 newstr = g_data.replace(":", "")
 # newstr=g.data(replace("0b"))
+print(newstr)
 print(len(newstr))
 # print(newst(r)
 # newstr=("16030100")
@@ -127,16 +149,16 @@ print("length of binary data", len(bin_data))
 
 
 
-value= shannon(bin_data)
+value= shannon(newstr)
 value2= entropy_ideal(len(bin_data))
-value3=kolmogorov(bin_data)
+value3=kolmogorov(newstr)
 print (value)
-print("second value of shannon", entropy(bin_data))
+print("second value of shannon", entropy(newstr))
 print ("ideal shannon entropy",value2)
 print ("kolmogorov entropy calculation", value3)
-
 # print("this is prior to conversion", newstr)
-""""#
+"""
+"""
 print("this is test of part 2")
 file = open("pi","rb")
 stringer=b''
