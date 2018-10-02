@@ -123,7 +123,7 @@ if __name__ == "__main__":
 
                     if (int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][
                                 u'ssl.handshake.type']) == 2):
-                        print(("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",hex(int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][u'ssl.handshake.ciphersuite']))))
+                        print(("type of encryption" , hex(int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][u'ssl.handshake.ciphersuite']))))
 
                 # print("this is the length", len(packet[u'_source'][u'layers'][u'ssl']))
                 # print(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'])
