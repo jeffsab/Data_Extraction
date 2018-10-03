@@ -202,7 +202,8 @@ if __name__ == "__main__":
 
     # this is for cipher suite the data is saved as an integer, got to convert this back to hex and check with file if recommended
     # the code for it is packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][ssl.handshake.ciphersuite]
-    cipher={}
+    cipher = {}
+    flow_entry = {}
     for packet in data:
         try:
 
@@ -215,38 +216,57 @@ if __name__ == "__main__":
             # print(packet[u'_source'][u'layers'][u'tcp'][u'tcp.payload'])
             # print(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'])
             # print("this is the length", len(packet[u'_source'][u'layers'][u'ssl']))
-
+            # src_ip=packet[u'_source'][u'layers'][u'ip.src']
+            # src_prt=packet[u'_source'][u'layers'][u'ip.src']
+            # dst_ip=packet[u'_source'][u'layers'][u'ip.dst']
+            # dst_prt=packet[u'_source'][u'layers'][u'ip.src']
             if (len(packet[u'_source'][u'layers'][u'ssl']) == 1):
+                src_ip = packet[u'_source'][u'layers'][u'ip'][u'ip.src']
+                src_prt = packet[u'_source'][u'layers'][u'tcp'][u'tcp.srcport']
+                dst_ip = packet[u'_source'][u'layers'][u'ip'][u'ip.dst']
+                dst_prt = packet[u'_source'][u'layers'][u'tcp'][u'tcp.dstport']
+
+                ip_port = (src_ip, src_prt, dst_ip, dst_prt)
+                flow = tuple(sorted(ip_port))
+                # print(type(flow))
 
                 if (
-                int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.record.content_type']) == 22 and int(
-                        packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.record.length']) > 70):
+                        int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][
+                                u'ssl.record.content_type']) == 22 and int(
+                    packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.record.length']) > 65):
 
                     # print ("length of ssl", (packet[u'_source'][u'layers'][u'ssl']))
 
                     # print(int(
                     #     packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][u'ssl.handshake.type']))
-                    #
-                    # print(type(int(
-                    #     packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][u'ssl.handshake.type'])))
 
                     if (int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][
                                 u'ssl.handshake.type']) == 2):
-                        c= hex(int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][u'ssl.handshake.ciphersuite']))
+                        c = hex(int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][
+                                        u'ssl.handshake.ciphersuite']))
 
-                        if cipher.get(c):
-                            cipher[c] += 1
+                        if cipher.get(flow):
+                            cipher[flow] = c
                         else:
-                            cipher[c] = 1
+                            cipher[flow] = c
 
                 # print("this is the length", len(packet[u'_source'][u'layers'][u'ssl']))
                 # print(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'])
                 # print(type(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data']))
+                if (int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.record.content_type']) == 23):
 
+                    # tcp_data_ex.append(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'][24:]) #remove first 24 as they are always same, but shouldnt be this way
 
-                # tcp_data_ex.append(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'][24:]) #remove first 24 as they are always same, but shouldnt be this way
-                tcp_data_ex.append(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'])
+                    if (flow_entry.get(flow)):
+                        flow_entry[flow] = flow_entry[flow] + (
+                        packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'])
+                        # print(type(flow_entry[flow]))
+                        # print("abc")
+                    else:
+                        flow_entry[flow] = (packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'])
+                        # print("this is the type of the dict", type(flow_entry[flow]))
 
+                    # tcp_data_ex.append(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'])
 
                 # print((packet[u'_source'][u'layers'][u'ssl']))
 
@@ -256,12 +276,13 @@ if __name__ == "__main__":
 
         except KeyError:
             continue
-
     # print(tcp_data_ex)
 
     # print ("abcdsadsa", tcp_data_ex )
-    print("length of ssl strip", len(tcp_data_ex))
     x = 0
+    tcp_data_ex=flow_entry[flow]
+
+    print("length of ssl strip", len(flow_entry))
 
     for elem in tcp_data_ex:
         if x == 1:
@@ -275,8 +296,8 @@ if __name__ == "__main__":
             # g_data= elem.encode('latin-1')
             g_data = elem
             # g_data=bytearray()
-            print(type(g_data), "this is it")
-            print(elem)
+            # print(type(g_data), "this is it")
+            # print(elem)
 
     f.close()
     newstr = g_data.replace(":", "")
