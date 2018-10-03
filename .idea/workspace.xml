@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8da080db-88a3-477e-8fcc-37b7b103f92f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -17,8 +15,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Data_Extraction$Shannon__copy_.coverage" NAME="Shannon (copy) Coverage Results" MODIFIED="1538536840797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Data_Extraction$Shannon__copy_.coverage" NAME="Shannon (copy) Coverage Results" MODIFIED="1538543542114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Data_Extraction$extraction.coverage" NAME="extraction Coverage Results" MODIFIED="1538536202857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Data_Extraction$main_belkin.coverage" NAME="main_belkin Coverage Results" MODIFIED="1538543881258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Data_Extraction$Shannon.coverage" NAME="Shannon Coverage Results" MODIFIED="1537267385552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Data_Extraction$from_uni.coverage" NAME="from_uni Coverage Results" MODIFIED="1537266289885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -36,41 +35,50 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="8" />
+          <entry key="py" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="8" />
+          <entry key="Python" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="141" />
           <entry key="dummy" value="4" />
-          <entry key="py" value="6585" />
+          <entry key="py" value="6778" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="6726" />
+          <entry key="Python" value="6919" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1566">
-              <caret line="291" column="52" lean-forward="true" selection-start-line="291" selection-start-column="52" selection-end-line="291" selection-end-column="52" />
+            <state relative-caret-position="609">
+              <caret line="222" column="104" selection-start-line="222" selection-start-column="104" selection-end-line="222" selection-end-column="104" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1538536840784" expanded="true" signature="4169:4518" ph="..." />
-                <marker date="1538536840784" expanded="true" signature="5254:5255" ph="..." />
-                <marker date="1538536840784" expanded="true" signature="5273:5278" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main_belkin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1010">
+              <caret line="227" column="20" selection-start-line="227" selection-start-column="20" selection-end-line="227" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,6 +111,7 @@
         <option value="$PROJECT_DIR$/extraction.py" />
         <option value="$PROJECT_DIR$/Shannon (copy).py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/main_belkin.py" />
       </list>
     </option>
   </component>
@@ -154,7 +163,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Shannon (copy)">
+  <component name="RunManager" selected="Python.main_belkin">
     <configuration name="Shannon (copy)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Data_Extraction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -243,14 +252,38 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main_belkin" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Data_Extraction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_belkin.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.Shannon" />
       <item itemvalue="Python.extraction" />
       <item itemvalue="Python.from_uni" />
       <item itemvalue="Python.Shannon (copy)" />
+      <item itemvalue="Python.main_belkin" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main_belkin" />
         <item itemvalue="Python.Shannon (copy)" />
         <item itemvalue="Python.extraction" />
         <item itemvalue="Python.Shannon" />
@@ -366,13 +399,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>102</line>
-          <option name="timeStamp" value="39" />
+          <line>55</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>55</line>
-          <option name="timeStamp" value="41" />
+          <line>265</line>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -416,25 +449,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1566">
-          <caret line="291" column="52" lean-forward="true" selection-start-line="291" selection-start-column="52" selection-end-line="291" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1538536840784" expanded="true" signature="4169:4518" ph="..." />
-            <marker date="1538536840784" expanded="true" signature="5254:5255" ph="..." />
-            <marker date="1538536840784" expanded="true" signature="5273:5278" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/extraction.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#24#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="222" column="104" selection-start-line="222" selection-start-column="104" selection-end-line="222" selection-end-column="104" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_belkin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1010">
+          <caret line="227" column="20" selection-start-line="227" selection-start-column="20" selection-end-line="227" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

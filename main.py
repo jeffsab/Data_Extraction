@@ -15,7 +15,7 @@ import scipy.stats as sst
 
 # import RandomnessTester
 
-def serial(bin_data, pattern_length=3, method="both"):
+def serial(bin_data, pattern_length=16, method="both"):
 
     bin_data="11101111011"
     """
@@ -202,7 +202,7 @@ if __name__ == "__main__":
 
     # this is for cipher suite the data is saved as an integer, got to convert this back to hex and check with file if recommended
     # the code for it is packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][ssl.handshake.ciphersuite]
-
+    cipher={}
     for packet in data:
         try:
 
@@ -220,19 +220,24 @@ if __name__ == "__main__":
 
                 if (
                 int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.record.content_type']) == 22 and int(
-                        packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.record.length']) > 45):
+                        packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.record.length']) > 70):
 
                     # print ("length of ssl", (packet[u'_source'][u'layers'][u'ssl']))
 
-                    print(int(
-                        packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][u'ssl.handshake.type']))
-
-                    print(type(int(
-                        packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][u'ssl.handshake.type'])))
+                    # print(int(
+                    #     packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][u'ssl.handshake.type']))
+                    #
+                    # print(type(int(
+                    #     packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][u'ssl.handshake.type'])))
 
                     if (int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][
                                 u'ssl.handshake.type']) == 2):
-                        print(("type of encryption" , hex(int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][u'ssl.handshake.ciphersuite']))))
+                        c= hex(int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][u'ssl.handshake.ciphersuite']))
+
+                        if cipher.get(c):
+                            cipher[c] += 1
+                        else:
+                            cipher[c] = 1
 
                 # print("this is the length", len(packet[u'_source'][u'layers'][u'ssl']))
                 # print(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'])
@@ -280,8 +285,8 @@ if __name__ == "__main__":
     print(len(newstr))
     # print(newst(r)
     # newstr=("16030100")
-    print(newstr)
-    print(type(newstr))
+    # print(newstr)
+    # print(type(newstr))
     bin_data = (bin(int(newstr, 16))[2:]).zfill(len(newstr * 4))
 
     print("length of binary data", len(bin_data))
@@ -291,7 +296,7 @@ if __name__ == "__main__":
     value = shannon(newstr)
     print("value of the whole string" , len(newstr))
     a=len(newstr)/2
-    print ("a is the value" ,a)
+    print ("a is the value", a)
     value2 = chi_squared(newstr)
     value3 = kolmogorov(newstr)
 
@@ -300,9 +305,10 @@ if __name__ == "__main__":
     print("kolmogorov entropy calculation", value3)
 
 
-    print("monobit value" ,monobit(bin_data))
-    print("serial values", serial(bin_data))
     # print("this is prior to conversion", newstr)
+    print (cipher)
+
+
 
     """
     print("this is test of part 2")
