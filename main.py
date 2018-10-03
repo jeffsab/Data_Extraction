@@ -8,40 +8,38 @@ import numpy
 import pandas
 import operator
 
-
 # import RandomnessTester
 
-def entropy(string):
-    "Calculates the Shannon entropy of a string"
 
-    # get probability of chars in string
-    prob = [float(string.count(c)) / len(string) for c in dict.fromkeys(list(string))]
+def arithmatic(data):
+    # Whithin the for statement, we determine the frequency of each byte
+    # in the dataset and if this frequency is not null we use it for the
+    # entropy calculation
 
-    # calculate the entropy
-    entropy = - sum([p * math.log(p) / math.log(2.0) for p in prob])
+    dataSize = len(data)/2 #divided by 2 as it is taking a byte not 4 bits
+    ent = 0.0
+    freq = {}
+    # for c in data:
+    for c in map(operator.add, data[::2], data[1::2]):
+        if freq.get(c):
+            freq[c] += 1
+        else:
+            freq[c] = 1
+    mean=0
+    # a byte can take 256 values from 0 to 255. Here we are looping 256 times
+    # to determine if each possible value of a byte is in the dataset
+    for key in freq.keys():
+        total= int(key,16)* freq[key]
+        mean=mean+total
 
-    return entropy
-
-
-def byte_entropy(flow):
-    if flow.has_key("be"):
-        flow_info = {}
-        flow_info["source address"] = flow["sa"]
-        flow_info["destination address"] = flow["da"]
-        flow_info["source port"] = flow["sp"]
-        flow_info["destination port"] = flow["dp"]
-        flow_info["Byte Entropy"] = flow["be"]
-    else:
-        return
-    return flow_info
-
+    return mean/dataSize
 
 def shannon(data):
     # Whithin the for statement, we determine the frequency of each byte
     # in the dataset and if this frequency is not null we use it for the
     # entropy calculation
 
-    dataSize = len(data)
+    dataSize = len(data)/2 #divided by 2 as it is taking a byte not 4 bits
     ent = 0.0
     freq = {}
     # for c in data:
@@ -112,12 +110,16 @@ if __name__ == "__main__":
             # print("this is the length", len(packet[u'_source'][u'layers'][u'ssl']))
 
             if (len(packet[u'_source'][u'layers'][u'ssl']) == 1):
-                if ((
-                int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.record.content_type'])) == 22 and int(
+
+                if (
+                int(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.record.content_type']) == 22 and int(
                         packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.record.length']) > 45):
+
                     # print ("length of ssl", (packet[u'_source'][u'layers'][u'ssl']))
+
                     print(int(
                         packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][u'ssl.handshake.type']))
+
                     print(type(int(
                         packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.handshake'][u'ssl.handshake.type'])))
 
@@ -128,7 +130,12 @@ if __name__ == "__main__":
                 # print("this is the length", len(packet[u'_source'][u'layers'][u'ssl']))
                 # print(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'])
                 # print(type(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data']))
+
+
+                # tcp_data_ex.append(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'][24:]) #remove first 24 as they are always same, but shouldnt be this way
                 tcp_data_ex.append(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'][u'ssl.app_data'])
+
+
                 # print((packet[u'_source'][u'layers'][u'ssl']))
 
                 # if (len(packet[u'_source'][u'layers'][u'ssl'][u'ssl.record'])==1):
@@ -171,12 +178,12 @@ if __name__ == "__main__":
     print("length of binary data", len(bin_data))
 
     # print("correct data",bin_data)
-
+    print("arithmatic mean", arithmatic(newstr))
     value = shannon(newstr)
-    value2 = entropy_ideal(len(bin_data))
+    value2 = entropy_ideal(16)
     value3 = kolmogorov(newstr)
-    print(value)
-    print("second value of shannon", entropy(newstr))
+
+    print("second value of shannon", value)
     print("ideal shannon entropy", value2)
     print("kolmogorov entropy calculation", value3)
     # print("this is prior to conversion", newstr)
